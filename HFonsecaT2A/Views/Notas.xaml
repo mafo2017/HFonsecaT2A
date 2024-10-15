@@ -3,10 +3,101 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HFonsecaT2A.Views.Notas"
              Title="Notas">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="10" Margin="10">
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Sistema de Calificaciones"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+        />
+        <Label Text=" "/>
+        <Label Text="" />
+        <Label Text="" />
+
+
+
+        <Picker x:Name="pkNombre"
+                Title="Seleccione estudiante"
+                SelectedIndexChanged="pkNombre_SelectedIndexChanged">
+
+            <Picker.Items>
+                <x:String >Estudiante 1</x:String>
+                <x:String >Estudiante 2</x:String>
+                <x:String >Estudiante 3</x:String>
+                <x:String >Estudiante 4</x:String>
+                <x:String>Santiago López</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Entry x:Name="notaS1"
+                Placeholder="Ingrese nota seguimiento 1"
+                Keyboard="Numeric"
+                MaxLength="2"
+               Completed="notaS1_Completed"
+        />
+
+        <Entry x:Name="notaE1"
+               Placeholder=" Ingrese nota del examen"
+               Keyboard="Numeric"
+               MaxLength="2"
+               Completed="notaE1_Completed"
+               Unfocused="notaE1_Unfocused"
+        />
+
+        <Entry x:Name="parcial1"
+             Placeholder="Nota parcial" 
+             IsEnabled="False"
+        />
+
+        <Label Text="Seguimiento 2"/>
+
+        <Entry x:Name="notaS2"
+               Placeholder="Ingrese nota seguimiento 2"
+               Keyboard="Numeric"
+               MaxLength="2"
+               Completed="notaS2_Completed"
+        />
+
+        <Entry x:Name="notaE2"
+                Placeholder=" Ingrese nota del examen 2"
+                Keyboard="Numeric"
+                MaxLength="2"
+                Completed="notaE2_Completed"
+                Unfocused="notaE2_Unfocused"       
+        />
+
+        <Entry x:Name="parcial2"
+                 Placeholder="Nota parcial 2" 
+                 IsEnabled="False"
+        />
+        
+        <Entry x:Name="notaFinal"
+                Placeholder="Nota Final"
+                IsEnabled="False"
+        />
+
+        <DatePicker x:Name="dpFecha" 
+                    Date="06/12/2024" 
+                    Format="MM/dd/yyyy"
+                    DateSelected="dpFecha_DateSelected"
+        />
+
+        <Entry x:Name="Estado"
+                Placeholder="Estatus"
+                IsEnabled="False"
+        />
+
+        <Entry x:Name="calFecha"
+                IsVisible="False"
+        />
+
+        <Entry x:Name="selPk"
+               IsVisible="False"
+        />
+
+        <Button x:Name="btnCalculo"
+                Text="Calcular notas del estudiante"
+                Clicked="btnCalculo_Clicked"
+        />
     </VerticalStackLayout>
+
 </ContentPage>
